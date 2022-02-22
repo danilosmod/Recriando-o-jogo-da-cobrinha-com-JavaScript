@@ -14,20 +14,25 @@ let food = {
 };
 
 function createBG() {
-    context.fillStyle = 'lightgreen';    
+    context.fillStyle = '#9AA682';
     context.fillRect(0, 0, 16 * box, 16 * box);
 }
 
 function createSnake() {
     for (i = 0; i < snake.length; i++) {
-        context.fillStyle = 'tomato';
-        context.strokeStyle = 'blue';
+        context.fillStyle = '#000000';
+        context.strokeStyle = '#c3ccb1';
+        context.lineWidth = 5;
+        context.strokeRect(snake[i].x, snake[i].y, box, box)
         context.fillRect(snake[i].x, snake[i].y, box, box);
     }
 }
 
 function createFood() {
-    context.fillStyle = 'pink';
+    context.fillStyle = '#000000';
+    context.strokeStyle = '#c3ccb1';
+    context.lineWidth = 5;
+    context.strokeRect(food.x, food.y, box, box);
     context.fillRect(food.x, food.y, box, box);
 }
 
@@ -81,4 +86,4 @@ function gameStart() {
 
 }
 
-let game = setInterval(gameStart, 100);
+let game = setInterval(gameStart, 150);
